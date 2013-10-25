@@ -132,7 +132,7 @@
         
     #Patch helper functions
     getParent = (paths, path) ->
-        paths[path.substr(0, path.match(/\//g).length)]
+        paths[path.substr(0, path.lastIndexOf("\/")) || '/']
 
     #Checks if `obj` is an array or object
     isContainer = (obj) ->
