@@ -112,7 +112,7 @@
       return result;
     };
     getParent = function(paths, path) {
-      return paths[path.substr(0, path.match(/\//g).length)];
+      return paths[path.substr(0, path.lastIndexOf("\/")) || '/'];
     };
     isContainer = function(obj) {
       return isArray(obj) || isObject(obj);
